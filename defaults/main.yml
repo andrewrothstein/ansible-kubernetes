@@ -1,25 +1,33 @@
 ---
-kubernetes_ver : v1.5.1
+kubernetes_ver : v1.5.2
+
+kubernetes_binary_checksums:
+  v1.5.1 :
+    kubernetes-client-darwin-amd64.tar.gz : 'sha256:3ede7d74c5f2f918547bca4d813901e33580c8b8f19828da21a5c2296ff4b8be'
+    kubernetes-client-linux-amd64.tar.gz : 'sha256:662fc57057290deb38ec49dd7daf4a4a5b91def2dbdb7ee7a4494dec611379a5'
+    kubernetes-server-linux-amd64.tar.gz : 'sha256:871a9f35e1c73f571b7113e01a91d7bfc5bfe3501e910c921a18313774b25fd1'
+  v1.5.2 :
+    kubernetes-client-linux-amd64.tar.gz : 'sha256:9d5b6edebb5ee09b20f35d821d3d233ff4d5935880fc8ea8f1fa654d5fd23e51'
+    kubernetes-client-darwin-amd64.tar.gz : 'sha256:64ebd769d96aa5a12f13c4d8c4f6ddce58eae90765c55b7942872dc91447e4d7' 
+    kubernetes-server-linux-amd64.tar.gz : 'sha256:8c4be20caa87530fdd17e539abe6f2d3cfccaef9156d262d4d9859ca8b6e3a38'
 
 kubernetes_platform : amd64
 
 kubernetes_mirror : https://storage.googleapis.com/kubernetes-release/release
 
+kubernetes_download_dir: /tmp/k8s-downloads
+kubernetes_cleanup_download: true
+
 kubernetes_install_dir : /usr/local/bin
 
-kubernetes_binaries : 
-  - f: kube-apiserver
-    c: sha256:f1f36855dc0cd3f9b7706f8904feccdeccca2f90b053445b9f01ed7d8859ed70
-    m: '0755'
-  - f: kube-controller-manager
-    c: sha256:fe6259a12e9833fccf3bf91431204366a7b5eb49fe9c568cd3772ebde6bdb34d
-    m: '0755'
-  - f: kubelet
-    c: sha256:dd70f395b1a796df6adba03d6964e0e37522a9a1ee841a3f2a941dea84a5b511
-    m: '0755'
-  - f: kube-proxy
-    c: sha256:2fecd3c05d31f5918d5980463d91ac5253b7cdd56e863509dbe4de98fc8b0f96
-    m: '0755'
-  - f: kube-scheduler
-    c: sha256:2d1d87d321e01af4dc02096b5dafd1190ec65e9fe26cdee7e2bf8b2e85d58cbf
-    m: '0755'
+kubernetes_server_binaries : 
+  - kube-apiserver
+  - kube-controller-manager
+  - kubelet
+  - kube-proxy
+  - kube-scheduler
+
+kubernetes_client_binaries:
+  - kubectl
+
+kubernetes_escalate_privilege: true

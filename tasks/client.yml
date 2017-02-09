@@ -1,0 +1,26 @@
+---
+- name: download client binaries
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  get_url:
+    url: '{{kubernetes_url}}/{{kubernetes_client_artifact_name}}'
+    dest: '{{kubernetes_download_path}}/{{kubernetes_client_artifact_name}}'
+    checksum: '{{kubernetes_binary_checksums[kubernetes_ver][kubernetes_client_artifact_name]}}'
+    mode: 0644
+
+- name: extract client binaries
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  unarchive:
+    src: '{{kubernetes_download_path}}/{{kubernetes_client_artifact_name}}'
+    dest: '{{kubernetes_install_path}}'
+    remote_src: yes
+
+- name: link client binaries
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  with_items: '{{kubernetes_client_binaries}}'
+  file:
+    src: '{{kubernetes_install_path}}/kubernetes/client/bin/{{item}}'
+    dest: '{{kubernetes_install_dir}}/{{item}}'
+    state: link
