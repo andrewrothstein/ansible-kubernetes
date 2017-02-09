@@ -4,9 +4,13 @@ kubernetes_platform : amd64
 
 kubernetes_ver : v1.5.2
 kubernetes_checksums:
-  kubernetes-client-linux-amd64.tar.gz : 'sha256:9d5b6edebb5ee09b20f35d821d3d233ff4d5935880fc8ea8f1fa654d5fd23e51'
-  kubernetes-client-darwin-amd64.tar.gz : 'sha256:64ebd769d96aa5a12f13c4d8c4f6ddce58eae90765c55b7942872dc91447e4d7' 
-  kubernetes-server-linux-amd64.tar.gz : 'sha256:8c4be20caa87530fdd17e539abe6f2d3cfccaef9156d262d4d9859ca8b6e3a38'
+  linux:
+    amd64:
+      client: sha256:9d5b6edebb5ee09b20f35d821d3d233ff4d5935880fc8ea8f1fa654d5fd23e51
+      server: sha256:8c4be20caa87530fdd17e539abe6f2d3cfccaef9156d262d4d9859ca8b6e3a38
+  darwin:
+    amd64:
+      client: sha256:64ebd769d96aa5a12f13c4d8c4f6ddce58eae90765c55b7942872dc91447e4d7
 
 kubernetes_install_dir : /usr/local/bin
 kubernetes_escalate_privilege: True
