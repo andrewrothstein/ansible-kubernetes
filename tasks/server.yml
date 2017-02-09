@@ -28,7 +28,7 @@
 - name: install runtime dependencies
   become: '{{kubernetes_escalate_privilege}}'
   become_user: root
-  with_items: '{{kubernetes_server_deps}}'
+  with_items: '{{kubernetes_server_dep_pkgs}}'
   package:
     name: '{{item}}'
     state: present
