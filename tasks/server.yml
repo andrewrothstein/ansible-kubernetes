@@ -37,7 +37,6 @@
   become: '{{kubernetes_escalate_privilege}}'
   become_user: root
   when: kubernetes_cleanup
-  with_items:
   file:
     path: /tmp/{{kubernetes_server_tgz}}
     state: absent
