@@ -1,16 +1,20 @@
 ---
 kubernetes_os : '{{ansible_system|lower}}'
 
-kubernetes_server_artifact_name : 'kubernetes-server-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
-kubernetes_client_artifact_name : 'kubernetes-client-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
-
 kubernetes_url : '{{kubernetes_mirror}}/{{kubernetes_ver}}'
 
-kubernetes_install_path : '{{kubernetes_install_dir}}/k8s-binaries/{{kubernetes_ver}}'
-kubernetes_download_path: '{{kubernetes_download_dir}}/{{kubernetes_ver}}'
+kubernetes_server_tgz : 'kubernetes-server-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
+kubernetes_server_tgz_url: '{{kubernetes_url}}/{{kubernetes_server_tgz}}'
+kubernetes_server_checksum: '{{kubernetes_checksums[kubernetes_server_artifact_name]}}'
 
-kubernetes_install_server_binaries: '{% if kubernetes_server_binaries is defined and kubernetes_server_binaries%}true{% else %}false{% endif %}'
-kubernetes_install_client_binaries: '{% if kubernetes_client_binaries is defined and kubernetes_client_binaries%}true{% else %}false{% endif %}'
+kubernetes_client_tgz : 'kubernetes-client-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
+kubernetes_client_tgz_url: '{{kubernetes_url}}/{{kubernetes_client_tgz}}'
+kubernetes_client_checksum: '{{kubernetes_checksums[kubernetes_client_artifact_name]}}'
+
+kubernetes_install_path : '{{kubernetes_install_dir}}/k8s-{{kubernetes_ver}}'
+
+kubernetes_server_install: '{{ kubernetes_server_binaries | default(False) }}'
+kubernetes_client_install: '{{ kubernetes_client_binaries | default(False) }}'
 
 kubernetes_server_deps:
   - conntrack

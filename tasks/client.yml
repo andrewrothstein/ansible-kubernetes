@@ -3,16 +3,16 @@
   become: '{{kubernetes_escalate_privilege}}'
   become_user: root
   get_url:
-    url: '{{kubernetes_url}}/{{kubernetes_client_artifact_name}}'
-    dest: '{{kubernetes_download_path}}/{{kubernetes_client_artifact_name}}'
-    checksum: '{{kubernetes_binary_checksums[kubernetes_ver][kubernetes_client_artifact_name]}}'
+    url: '{{kubernetes_client_tgz_url}}'
+    dest: /tmp/{{kubernetes_client_tgz}}
+    checksum: '{{kubernetes_client_checksum}}'
     mode: 0644
 
 - name: extract client binaries
   become: '{{kubernetes_escalate_privilege}}'
   become_user: root
   unarchive:
-    src: '{{kubernetes_download_path}}/{{kubernetes_client_artifact_name}}'
+    src: /tmp/{{kubernetes_client_tgz}}
     dest: '{{kubernetes_install_path}}'
     remote_src: yes
 
@@ -24,3 +24,12 @@
     src: '{{kubernetes_install_path}}/kubernetes/client/bin/{{item}}'
     dest: '{{kubernetes_install_dir}}/{{item}}'
     state: link
+
+- name: cleaning up...
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  when: kubernetes_cleanup
+  with_items:
+  file:
+    path: /tmp/{{kubernetes_client_tgz}}
+    state: absent
