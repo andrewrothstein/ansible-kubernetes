@@ -22,3 +22,7 @@ kubernetes_client_binaries:
   - kubectl
 
 kubernetes_cleanup: False
+
+# to disable installation of either the server or client binaries...
+#kubernetes_install_server: False
+#kubernetes_install_client: False
