@@ -1,4 +1,17 @@
 ---
 kubernetes_os : '{{ansible_system|lower}}'
-kubernetes_url : '{{kubernetes_mirror}}/{{kubernetes_ver}}/bin/{{kubernetes_os}}/{{kubernetes_platform}}'
-kubernetes_install_path : '{{kubernetes_install_dir}}/k8s-binaries-{{kubernetes_ver}}'
+
+kubernetes_server_artifact_name : 'kubernetes-server-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
+kubernetes_client_artifact_name : 'kubernetes-client-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
+
+kubernetes_url : '{{kubernetes_mirror}}/{{kubernetes_ver}}'
+
+kubernetes_install_path : '{{kubernetes_install_dir}}/k8s-binaries/{{kubernetes_ver}}'
+kubernetes_download_path: '{{kubernetes_download_dir}}/{{kubernetes_ver}}'
+
+kubernetes_install_server_binaries: '{% if kubernetes_server_binaries is defined and kubernetes_server_binaries%}true{% else %}false{% endif %}'
+kubernetes_install_client_binaries: '{% if kubernetes_client_binaries is defined and kubernetes_client_binaries%}true{% else %}false{% endif %}'
+
+kubernetes_server_deps:
+  - conntrack
+  - socat

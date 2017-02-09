@@ -1,27 +1,34 @@
 ---
-- name: create target directory
-  become: yes
-  become_user: root
-  file: >-
-    path={{kubernetes_install_path}}
-    state=directory
-    mode=0755
+- name: resolve platform specific vars
+  include_vars: "{{item}}"
+  with_first_found:
+    - files:
+        - "{{ansible_distribution}}-{{ansible_distribution_release}}.yml"
+        - "{{ansible_distribution}}.yml"
+        - "{{ansible_os_family}}.yml"
+      skip: true
 
-- name: install kubernetes
-  become: yes
+- name: create target directories
+  become: '{{kubernetes_escalate_privilege}}'
   become_user: root
-  get_url: >-
-    url={{kubernetes_url}}/{{item.f}}
-    dest={{kubernetes_install_path}}/{{item.f}}
-    checksum={{item.c}}
-    mode={{item.m}}
-  with_items: '{{kubernetes_binaries}}'
+  with_items:
+    - '{{kubernetes_download_path}}'
+    - '{{kubernetes_install_path}}'
+  file:
+    path: '{{item}}'
+    state: directory
+    mode: 0755
 
-- name: link kubernetes
-  become: yes
+- include: server.yml
+  when: kubernetes_install_server_binaries
+
+- include: client.yml
+  when: kubernetes_install_client_binaries
+
+- name: cleanup downloads
+  become: '{{kubernetes_escalate_privilege}}'
   become_user: root
-  file: >-
-    src={{kubernetes_install_path}}/{{item.f}}
-    dest={{kubernetes_install_dir}}/{{item.f}}
-    state=link
-  with_items: '{{kubernetes_binaries}}'
+  when: kubernetes_cleanup_download
+  file:
+    path: '{{kubernetes_download_path}}'
+    state: absent

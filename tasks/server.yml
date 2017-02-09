@@ -1,0 +1,34 @@
+---
+- name: download server binaries
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  get_url:
+    url: '{{kubernetes_url}}/{{kubernetes_server_artifact_name}}'
+    dest: '{{kubernetes_download_path}}/{{kubernetes_server_artifact_name}}'
+    checksum: '{{kubernetes_binary_checksums[kubernetes_ver][kubernetes_server_artifact_name]}}'
+    mode: 0644
+
+- name: extract server binaries
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  unarchive:
+    src: '{{kubernetes_download_path}}/{{kubernetes_server_artifact_name}}'
+    dest: '{{kubernetes_install_path}}'
+    remote_src: yes
+
+- name: link server binaries
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  with_items: '{{kubernetes_server_binaries}}'
+  file:
+    src: '{{kubernetes_install_path}}/kubernetes/server/bin/{{item}}'
+    dest: '{{kubernetes_install_dir}}/{{item}}'
+    state: link
+
+- name: install runtime dependencies
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  with_items: '{{kubernetes_server_deps}}'
+  package:
+    name: '{{item}}'
+    state: present
