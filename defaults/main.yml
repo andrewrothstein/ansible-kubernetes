@@ -27,6 +27,10 @@ kubernetes_client_binaries:
 
 kubernetes_cleanup: False
 
+kubernetes_server_deps:
+  - conntrack
+  - socat
+
 # to disable installation of either the server or client binaries...
 #kubernetes_install_server: False
 #kubernetes_install_client: False
