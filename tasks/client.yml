@@ -16,6 +16,15 @@
     dest: '{{kubernetes_install_path}}'
     remote_src: yes
 
+- name: make binary directory world readable
+  become: '{{kubernetes_escalate_privilege}}'
+  become_user: root
+  file:
+    path: '{{kubernetes_install_path}}/kubernetes/client/bin'
+    state: directory
+    recurse: true
+    mode: 0755
+
 - name: make binaries world executable
   become: '{{kubernetes_escalate_privilege}}'
   become_user: root
