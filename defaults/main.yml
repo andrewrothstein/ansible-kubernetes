@@ -2,15 +2,15 @@
 kubernetes_mirror : https://storage.googleapis.com/kubernetes-release/release
 kubernetes_platform : amd64
 
-kubernetes_ver : v1.5.2
+kubernetes_ver : v1.5.3
 kubernetes_checksums:
   linux:
     amd64:
-      client: sha256:9d5b6edebb5ee09b20f35d821d3d233ff4d5935880fc8ea8f1fa654d5fd23e51
-      server: sha256:8c4be20caa87530fdd17e539abe6f2d3cfccaef9156d262d4d9859ca8b6e3a38
+      client: sha256:eaf386a46eeee324bb71349bba7d5d3f41d7d19af75537cf9e4e7045d7068f68
+      server: sha256:ad4d101bec0ef981a7e1efbe11223e502ff644368d70ad54915e15fcb3ad6735
   darwin:
     amd64:
-      client: sha256:64ebd769d96aa5a12f13c4d8c4f6ddce58eae90765c55b7942872dc91447e4d7
+      client: sha256:b044240271223aa93f8bdb8054824a48ba5571460d2e6c90688dccd0892e5c7e
 
 kubernetes_install_dir : /usr/local/bin
 kubernetes_escalate_privilege: True
