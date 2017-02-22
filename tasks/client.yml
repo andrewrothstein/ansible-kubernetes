@@ -15,6 +15,7 @@
     src: /tmp/{{kubernetes_client_tgz}}
     dest: '{{kubernetes_install_path}}'
     remote_src: yes
+    creates: '{{kubernetes_install_path}}/kubernetes/client/bin'
 
 - name: make binary directory world readable
   become: '{{kubernetes_escalate_privilege}}'
