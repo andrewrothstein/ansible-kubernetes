@@ -2,15 +2,27 @@
 kubernetes_mirror : https://storage.googleapis.com/kubernetes-release/release
 kubernetes_platform : amd64
 
-kubernetes_ver : v1.5.3
+kubernetes_ver : v1.5.4
+
+# see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#v154
 kubernetes_checksums:
-  linux:
-    amd64:
-      client: sha256:eaf386a46eeee324bb71349bba7d5d3f41d7d19af75537cf9e4e7045d7068f68
-      server: sha256:ad4d101bec0ef981a7e1efbe11223e502ff644368d70ad54915e15fcb3ad6735
-  darwin:
-    amd64:
-      client: sha256:b044240271223aa93f8bdb8054824a48ba5571460d2e6c90688dccd0892e5c7e
+  client:
+    linux:
+      amd64: sha256:24001bc0c7ddb32cd72ac9bed55543830424fba734587ac23b812d8d047a9091
+      '386': sha256:80719626f7e6db6d2d04e57bb7edad3077b774a11ebccea3fcddadaa48cbf0a6
+      arm64: sha256:094ff4fe7a10e23a397803869a11a3cc508f3990d9e3b4fbccaefe44be2ad81a
+      arm: sha256:b12b823d12942d7fccaf791343e9c9854073de3e03cc57a7e4bd7b03fec9806b
+    windows:
+      '386': sha256:e5ae9775cfe695d2d855b29c01f19b0fd0fad008071d8e95f47f70beb16291a8
+      amd64: sha256:40cc26a8216e703217264194b68d6b5af28ffa1b9b48b23232027c5d63d8b28c
+    darwin:
+      amd64: sha256:6fac39282c9599566874d63c57b305798e4096a42ef83a8965f615c1d709559c
+      '386': sha256:53e7c4839025ad04c1104b99e1f8b45f4fe639397c623e2e050acb53cb0a8cbd
+  server:
+    linux:
+      amd64: sha256:a61cb36d64c8a4111cf04f9d1aac5d8418d07a7c8a682522203b0dfa76f9c806
+      arm64: sha256:abaa5052f9d0daaebf6b7375c9667c9160355b8ea074daac76ba8a79a24cab37
+      arm: sha256:ffff55a0f5f5848fdde32a2766dc63cdf26629ca4f91db458381ffb55cf49535
 
 kubernetes_install_dir : /usr/local/bin
 kubernetes_escalate_privilege: True
