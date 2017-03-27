@@ -2,27 +2,27 @@
 kubernetes_mirror : https://storage.googleapis.com/kubernetes-release/release
 kubernetes_platform : amd64
 
-kubernetes_ver : v1.5.4
+kubernetes_ver : v1.5.5
 
 # see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#v154
 kubernetes_checksums:
   client:
     linux:
-      amd64: sha256:24001bc0c7ddb32cd72ac9bed55543830424fba734587ac23b812d8d047a9091
-      '386': sha256:80719626f7e6db6d2d04e57bb7edad3077b774a11ebccea3fcddadaa48cbf0a6
-      arm64: sha256:094ff4fe7a10e23a397803869a11a3cc508f3990d9e3b4fbccaefe44be2ad81a
-      arm: sha256:b12b823d12942d7fccaf791343e9c9854073de3e03cc57a7e4bd7b03fec9806b
+      amd64: sha256:73536e200fee9f4de19ebfd7d2e063a04f5ccb93073982032e79dc47ae92e89a
+      '386': sha256:8366a72910c987e4140db42244741752efac8e06f0e13f5d0cbc1cc9bec9733c
+      arm64: sha256:8f679bd012ecbc58f0a916f393d3fc79de6dc2624320b04edc1b9249213a49f8
+      arm: sha256:1998d6398aef02898babc5ff20484fe7c538f75f78c650631afea1a555aee8d1
     windows:
-      '386': sha256:e5ae9775cfe695d2d855b29c01f19b0fd0fad008071d8e95f47f70beb16291a8
-      amd64: sha256:40cc26a8216e703217264194b68d6b5af28ffa1b9b48b23232027c5d63d8b28c
+      '386': sha256:dff6fe02a6090feb949acc5753633891bcbdb7ecfb2bff3fa132d025713cbd55
+      amd64: sha256:bd7c7c39122135b58da89a700580475a3cadbb31aa1b35175ff2f80067bedc0d
     darwin:
-      amd64: sha256:6fac39282c9599566874d63c57b305798e4096a42ef83a8965f615c1d709559c
-      '386': sha256:53e7c4839025ad04c1104b99e1f8b45f4fe639397c623e2e050acb53cb0a8cbd
+      amd64: sha256:dd2076d8a3062459b82481bf064d80a198df580f2c34efe7132a091c19d8084c
+      '386': sha256:92eb19b1464674078927263642205498a9b4e496909138626de721f8ff2eb3f1
   server:
     linux:
-      amd64: sha256:a61cb36d64c8a4111cf04f9d1aac5d8418d07a7c8a682522203b0dfa76f9c806
-      arm64: sha256:abaa5052f9d0daaebf6b7375c9667c9160355b8ea074daac76ba8a79a24cab37
-      arm: sha256:ffff55a0f5f5848fdde32a2766dc63cdf26629ca4f91db458381ffb55cf49535
+      amd64: sha256:578977b62af58639548d743991cd2f71b0fd58f9caa729131824f8dde85b5c6e
+      arm64: sha256:01a1104d8c5a22c26b8b0a402bf0362d749b7d13a636b31c64fb51bb61ea3a01
+      arm: sha256:06c5ca1f962f368219835ed6d075ef6e3a72685f2f0988823f44dd2e602e1980
 
 kubernetes_install_dir : /usr/local/bin
 kubernetes_escalate_privilege: True
