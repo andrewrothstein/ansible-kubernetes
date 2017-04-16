@@ -1,5 +1,5 @@
 ---
 - hosts: all
   roles:
-    - role: andrewrothstein.upgrade-pkgs
+    - role: andrewrothstein.pkg-upgrade
     - role: '{{playbook_dir}}'
