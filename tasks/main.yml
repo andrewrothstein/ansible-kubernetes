@@ -19,7 +19,7 @@
     mode: 0755
 
 - include: server.yml
-  when: '{{ kubernetes_install_server | default(True) }}'
+  when: kubernetes_install_server | default(True)
 
 - include: client.yml
-  when: '{{ kubernetes_install_client | default(True) }}'
+  when: kubernetes_install_client | default(True)
