@@ -25,5 +25,5 @@ galaxy_info:
     - kubernetes
 
 dependencies:
-  - role: andrewrothstein.unarchive-deps
+  - src: andrewrothstein.unarchive-deps
     version: v1.0.8
