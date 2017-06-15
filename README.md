@@ -2,7 +2,7 @@ andrewrothstein.kubernetes
 ==========================
 [![Build Status](https://travis-ci.org/andrewrothstein/ansible-kubernetes.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-kubernetes)
 
-A role for installing [Kubernetes](http://kubernetes.io/docs/getting-started-guides/binary_release/#prebuilt-binary-release)  binaries to /usr/local/bin.
+Installs [Kubernetes](http://kubernetes.io/docs/getting-started-guides/binary_release/#prebuilt-binary-release)  binaries to /usr/local/bin.
 
 Requirements
 ------------
