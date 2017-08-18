@@ -1,0 +1,4 @@
+---
+kubernetes_server_dep_pkgs:
+  - conntrack-tools
+  - socat
