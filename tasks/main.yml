@@ -1,12 +1,14 @@
 ---
 - name: resolve platform specific vars
-  include_vars: "{{item}}"
+  include_vars: '{{item}}'
   with_first_found:
     - files:
-        - "{{ansible_distribution}}-{{ansible_distribution_release}}.yml"
-        - "{{ansible_distribution}}.yml"
-        - "{{ansible_os_family}}.yml"
+        - '{{ansible_distribution}}-{{ansible_distribution_release}}.yml'
+        - '{{ansible_distribution}}.yml'
+        - '{{ansible_os_family}}.yml'
       skip: true
+      paths:
+        - '{{role_path}}/vars'
 
 - name: create directories...
   become: '{{kubernetes_escalate_privilege}}'
@@ -19,7 +21,10 @@
     mode: 0755
 
 - include: server.yml
-  when: kubernetes_install_server | default(True)
+  when: kubernetes_install_server | default(False)
 
 - include: client.yml
-  when: kubernetes_install_client | default(True)
+  when: kubernetes_install_client | default(False)
+
+- include: node.yml
+  when: kubernetes_install_node | default(False)

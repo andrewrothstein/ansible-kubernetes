@@ -42,12 +42,22 @@ kubernetes_escalate_privilege: True
 
 kubernetes_binaries:
   server:
+    - hyperkube
+    - kubeadm
+    - kube-aggregator
     - kube-apiserver
     - kube-controller-manager
+    - kubefed
     - kubelet
     - kube-proxy
     - kube-scheduler
   client:
+    - kubectl
+    - kubefed
+  node:
+    - kube-proxy
+    - kubefed
+    - kubelet
     - kubectl
 
 kubernetes_cleanup: False

@@ -2,3 +2,6 @@
 - hosts: all
   roles:
     - role: '{{playbook_dir}}'
+      kubernetes_install_server: True
+      kubernetes_install_client: True
+      kubernetes_install_node: True
