@@ -2,40 +2,40 @@
 kubernetes_mirror : https://storage.googleapis.com/kubernetes-release/release
 kubernetes_platform : amd64
 
-kubernetes_ver : v1.7.5
+kubernetes_ver : v1.7.6
 
-# see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#v175
+# see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#v176
 kubernetes_checksums:
   client:
     darwin:
-      '386': sha256:2c1c40c161e5ccae6df0dc5846a9a8bd55ebcd5b55012e09c01ec00bc81f4a81
-      amd64: sha256:6e749df53f9b4f5e2c1a94c360e06e9d4c4c0bf34c0dd2a02476d476e8da3f68
+      '386': sha256:fc5ee8d608cc551693839ac79c1330b7a688930a8f16b0d313128844d598e4d3
+      amd64: sha256:0e9dad45f6dd4ef06d9aef7151ba02612300ddebf7fb4b7e64174408590e340e
     linux:
-      '386': sha256:d0edb7229ec27c4354589a1045766d8e12605be5c2ab82cef3e30d324ba66095
-      amd64: sha256:e246dc357be1ccaad1c5f79d4696abdc31a90bd8eae642e5bacd1e7d820517ad
-      arm64: sha256:bf94c70e00cb3c451a3b024e64fd5933098850fe3414e8b72d42244cbd478a2e
-      arm:   sha256:17d4af2b552377ee580230c0f0ea0de8469e682c01cd0ebde8f50c52cd02bed3
-      ppc64le: sha256:bfa32c4b1d70474dd5fccd588bd4e836c6d330b1d6d04de3ceeb3acc4f65a21b
-      s390x: sha256:c2a3822d358b24c909b8965a25ac759f510bab3f60b6117cf522dccabc724cb0
+      '386': sha256:74fc57544bd2b109fb620f0f8f1e821a66e83082700a49cfc38e5b2c1d7221a6
+      amd64: sha256:0d46a9c297d193bc193487aa1734141be764a0078759748ec800f92bd183de5f
+      arm64: sha256:ef9dbbd93e4ad02e02297466b631e779f5fd96f2a449a5f628b239068e615a22
+      arm:   sha256:25637797aed9d4904e8209d5085ade93df12a9fbcf6c09499e3a20cba6876122
+      ppc64le: sha256:9a9cc9e747fd56330c87b68508c9cb6cedbe988a7682e70f6410a0d1c6bc9256
+      s390x: sha256:8cdaaf06618b5e936ad90bdae608ea0e9f352b91197002031b3802fbdeda6aa3
     windows:
-      '386': sha256:b70b3de5a33eb7762aa371b1b7e426a0cafc1d468bb33dff2db20997d244bd37
-      amd64: sha256:7f995b5a4f9338b9aa62508ac71ccd615f0ef577841d603f9e9ea6683be688b0
+      '386': sha256:e1e74224d151d0317eba54ac02bdac21e86416af475b27a068e9f72749b10481
+      amd64: sha256:37d9a7c0fbf3ff1e47d51a986f939c4f257bf265916c5f1b2e809b8161f48953
   server:
     linux:
-      amd64:   sha256:7482c12dae75fb195f2f3afa92f62c354cafb97bee5703c4fdaa617d27c7cf68
-      arm64:   sha256:0be475479062f113fcc41d91215c21409c6e4c000e96ffc0246e4597b6737a29
-      arm:     sha256:07527fbe49a2f12eae25ccd49e8a95deae7f5a8c8bae2014e5dc2561e4a04fdb
-      ppc64le: sha256:fed7ee43ba5db918d277e26da9ca556254fa365445d51cb33a3e304d1e3841e9
-      s390x:   sha256:47b548cc2c6e224c49fe286da3db61c0cf1905239df2869b88b9b8607edbbd73
+      amd64:   sha256:302c3c48f9c2def14fd4503f5caf3c66e8abefd478e735ec7a270b3ba313f93c
+      arm64:   sha256:04a28285cc98e57dee3d41987adb4e08e049b9c0d493ed3ae1b7017c2d4aaa66
+      arm:     sha256:caf808442d09784dea5b18d89a39cbfe318257bd5efa03ab81b4393a5aa3e370
+      ppc64le: sha256:b156c17df4a4c2badd1c7e580652ffe6d816c1134ebb22e1ca1fa7ef1b8326df
+      s390x:   sha256:1a4fedd1ec94429b5ea8ef894b04940e248f872fab272f28fddff5951e4ee571
   node:
     linux:
-      amd64:   sha256:f5dd62f21d2cc516768b55d191bc20fc20901b9fa2e1165eef2adcca4821e23d
-      arm64:   sha256:8ee0d5f417651f2ce9ab5e504bbd47fbfe0f15d6e3923a1356b2def4f1012b66
-      arm:     sha256:40882a5c505fee370eb69e890b8974d3bb9c896307795d81bf7dff52797e4eeb
-      ppc64le: sha256:597bd33af9f03874fabc0778de3df057f13364630d590cc4443e4c858ffbe7f3
-      s390x:   sha256:dd57a82a5d71d03a97cebf901bf9cc5273b935218f4fc1c3f1471b93842a4414
+      amd64:   sha256:8d798ef84c933c9aa4ba144277ebe571879b2237239827565327be2c97726bbc
+      arm64:   sha256:ca0976faf03812a415da6a0dc244a65222a3f8d81b3da929530988a36ce0dc1a
+      arm:     sha256:92fd22d0bb51d32e24490a0ec12c48e28b5c5a19826c10f5e9061d06620ca12f
+      ppc64le: sha256:1b39b2a89a5522a9f1d23b90a51070a13bede72a66c3b6b217289fa4fadbc0d6
+      s390x:   sha256:fda8c1ed4ebd406a6c19d0a982ba6705f0533e6c1db96e2bd121392deb4018ed
     windows:
-      amd64:   sha256:d95511742d26c375b5a705b85b498b200c8e081fec365c4b60df18def49d151c
+      amd64:   sha256:325caebf0f5d9dc79259f9609014e80385753d3ad1fff7fb276b19d2f272ef3b
 
 kubernetes_install_dir : /usr/local/bin
 kubernetes_escalate_privilege: True
