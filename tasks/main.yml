@@ -20,11 +20,11 @@
     state: directory
     mode: 0755
 
-- include_tasks: server.yml
+- include: server.yml
   when: kubernetes_install_server | default(False)
 
-- include_tasks: client.yml
+- include: client.yml
   when: kubernetes_install_client | default(False)
 
-- include_tasks: node.yml
+- include: node.yml
   when: kubernetes_install_node | default(False)
