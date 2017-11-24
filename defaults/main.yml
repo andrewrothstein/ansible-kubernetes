@@ -2,40 +2,7 @@
 kubernetes_mirror : https://storage.googleapis.com/kubernetes-release/release
 kubernetes_platform : amd64
 
-kubernetes_ver : v1.8.2
-
-# see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v182
-kubernetes_checksums:
-  client:
-    darwin:
-      '386': sha256:3eb81f1178ff73ca683738606acea1d9537a33c6e3d15571795a24af6c53dbd7
-      amd64: sha256:15da279f018a73f93b857639931c4ba8a714c86e5c5738c33840c47df44ac2a4
-    linux:
-      '386':   sha256:bd9f144e6ddfc715fa77d9cb0310763e49f8121e894ed33714658fb2d6eb2675
-      amd64:   sha256:7c20d4a3859c07aadf9a1676876bafdf56187478a69d3bfca5277fb275febb96
-      arm64:   sha256:395c3fb5992509191cacbaf6e7ed4fd0fbee5c0b9c890f496879784454f88aa3
-      arm:     sha256:a1cff2f8ab5f77f000e20f87b00a3723a8323fec82926afcc984722ab3f8d714
-      ppc64le: sha256:832a1e399802bfd8871cd911f17dbb6b2264680e9477c2944d442a3f9e5fa6f2
-      s390x:   sha256:6afc2c4a331ee70e095a6d1e1f11bf69923afb1830840d110459e32b849b1b6c
-    windows:
-      '386': sha256:ecaadb5a4c08357685dbaee288d1220bd60ff0f86281ec88a5467da6eebf213b
-      amd64: sha256:b8ff337615f740b1501cf7284d7f0a51a82880dcf23fff2464f8d37045c27f3f
-  server:
-    linux:
-      amd64:   sha256:8ccd4912473e0d334694434936a5ca9547caddaa39d771a1fb94620c5d6002d4
-      arm64:   sha256:39b3c61927c905f142d74fe69391156e6bf61cc5e7a798cdf2c295a76e72161d
-      arm:     sha256:fc6b01b233f8d0c61dd485d8d571c9a2e1a5b085f0d0db734a84c42b71416537
-      ppc64le: sha256:6f6d8dcef0334736021d9f6cc2bbfdb78500483f8961e7ff14b09f1c67d37056
-      s390x:   sha256:6f1b6b5fb818fdb787cdf65ff3da81235b5b4db5b4a9b5579920d11dc8a3fa73
-  node:
-    linux:
-      amd64:   sha256:93c6b5d2a5e4aaf8776f56e5b8f40038c76d3d03709124fb8900f83acb49c782
-      arm64:   sha256:ab4535e19825e0e9b76987dbb11d9fd746281e45a90f90b453dbc7d6fecb2c69
-      arm:     sha256:96acd6ec41d4a3ec7ea6f95acecf116755340915e3d261de760d9ed84708e3f0
-      ppc64le: sha256:4256a8c315de083435fcdfc8ee2ae370bd603fa976218edadbf7bfe11adcf223
-      s390x:   sha256:30f2254bf442fc36fc23bd962930eb48fd000c9ffce81c26c0d64d4a0fd0c193
-    windows:
-      amd64:   sha256:b92c2670ce8dd75f744537abb6e98df84ce5a18da7df6b70741e92d9e57098bf
+kubernetes_ver : v1.8.4
 
 kubernetes_install_dir : /usr/local/bin
 kubernetes_escalate_privilege: True
@@ -65,3 +32,68 @@ kubernetes_cleanup: False
 kubernetes_server_dep_pkgs:
   - conntrack
   - socat
+
+kubernetes_checksums:
+  v1.8.4: # see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v184
+    client:
+      darwin:
+        '386': sha256:86b1ac96cd3bbaaa25806f8de34c26a9d6c9ba1daf70baa9df9d488db0da7054
+        amd64: sha256:f541a9b48ef115e2e4923f906daa9bc112f0b308d8d5559135e507d04fdc0424
+      linux:
+        '386':   sha256:9d3ea12e58e2e6eef35641856a5fa116bd7301570868252c5525ff8a0719b5bc
+        amd64:   sha256:4d3c2a9e0d837e3607580d95bbc473ffb496fc47ba0ce7721e9180a9020f1f39
+        arm64:   sha256:02c95d433cc5ce4f2d1e162b13f74f82888cd6dbd91c031198fbb7ab55131093
+        arm:     sha256:8f3d6bf3a3e05a65c93e071ce6b5653be534aa358c01cc2de704db9bc45b040e
+        ppc64le: sha256:775bcc7d66364f43794be96ab6b36992904f7ed0d56bb8e309216be23ff22862
+        s390x:   sha256:162584246b70c2a3c40571080c1cf0c73efbe6101d7c7f27059115336b901cb8
+      windows:
+        '386': sha256:fd88cc783cd73972b9175bebdb719dff697b5ff200ea6ef61152f3ce38b07f6f
+        amd64: sha256:42ec653406de971f7a7e5b16c5ef0d6ebf3d17782d40b2a88a13ef128fe57d62
+    server:
+      linux:
+        amd64:   sha256:08d64a59a5fe620488f05214844a910144d7fe16a783d351704c71f3843124dc
+        arm64:   sha256:75ef62ecd203088a0f5bb5f48d782fd91af4a7dc3348b265ddd13c5bd15d0d01
+        arm:     sha256:276120cdc40e7925c4c09e26a546d954a43d0599b573e26b76f62f816b5b256d
+        ppc64le: sha256:2c9a213de651be74452116778dc47800f036d03cdbdf65a424a3fd566906933d
+        s390x:   sha256:7c073fe63198b793b7a63ebd5f8adb69b780cae128df70b2c964f2493487021f
+    node:
+      linux:
+        amd64:   sha256:108e9cb2353aa64bbf5e11b938ee65a79abd879136b1f4ab123c897463d388fb
+        arm64:   sha256:b59029a6abbfb628bb14d1d2b633307ad1f22c6b758ffd11d7ba5b1a82e63f94
+        arm:     sha256:f31b08171d6a07ae4fca6b0153ce8da68df766f2334dc75c8b3206840c22424e
+        ppc64le: sha256:0065e1b5cf385097b8da29cc2c91c5555e5f3cd8beed1874f1753b9b5c10e363
+        s390x:   sha256:dd08355d5350ef7f881f109bbe627071b494f3d86633a29ac2e4a834cd8d70b3
+      windows:
+        amd64:   sha256:1b11e3fbc0af816510660a624f38a68c8c1008c1d9045a4bad373be8af022f7a
+  v1.8.2: # # see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v182
+    client:
+      darwin:
+        '386': sha256:3eb81f1178ff73ca683738606acea1d9537a33c6e3d15571795a24af6c53dbd7
+        amd64: sha256:15da279f018a73f93b857639931c4ba8a714c86e5c5738c33840c47df44ac2a4
+      linux:
+        '386':   sha256:bd9f144e6ddfc715fa77d9cb0310763e49f8121e894ed33714658fb2d6eb2675
+        amd64:   sha256:7c20d4a3859c07aadf9a1676876bafdf56187478a69d3bfca5277fb275febb96
+        arm64:   sha256:395c3fb5992509191cacbaf6e7ed4fd0fbee5c0b9c890f496879784454f88aa3
+        arm:     sha256:a1cff2f8ab5f77f000e20f87b00a3723a8323fec82926afcc984722ab3f8d714
+        ppc64le: sha256:832a1e399802bfd8871cd911f17dbb6b2264680e9477c2944d442a3f9e5fa6f2
+        s390x:   sha256:6afc2c4a331ee70e095a6d1e1f11bf69923afb1830840d110459e32b849b1b6c
+      windows:
+        '386': sha256:ecaadb5a4c08357685dbaee288d1220bd60ff0f86281ec88a5467da6eebf213b
+        amd64: sha256:b8ff337615f740b1501cf7284d7f0a51a82880dcf23fff2464f8d37045c27f3f
+    server:
+      linux:
+        amd64:   sha256:8ccd4912473e0d334694434936a5ca9547caddaa39d771a1fb94620c5d6002d4
+        arm64:   sha256:39b3c61927c905f142d74fe69391156e6bf61cc5e7a798cdf2c295a76e72161d
+        arm:     sha256:fc6b01b233f8d0c61dd485d8d571c9a2e1a5b085f0d0db734a84c42b71416537
+        ppc64le: sha256:6f6d8dcef0334736021d9f6cc2bbfdb78500483f8961e7ff14b09f1c67d37056
+        s390x:   sha256:6f1b6b5fb818fdb787cdf65ff3da81235b5b4db5b4a9b5579920d11dc8a3fa73
+    node:
+      linux:
+        amd64:   sha256:93c6b5d2a5e4aaf8776f56e5b8f40038c76d3d03709124fb8900f83acb49c782
+        arm64:   sha256:ab4535e19825e0e9b76987dbb11d9fd746281e45a90f90b453dbc7d6fecb2c69
+        arm:     sha256:96acd6ec41d4a3ec7ea6f95acecf116755340915e3d261de760d9ed84708e3f0
+        ppc64le: sha256:4256a8c315de083435fcdfc8ee2ae370bd603fa976218edadbf7bfe11adcf223
+        s390x:   sha256:30f2254bf442fc36fc23bd962930eb48fd000c9ffce81c26c0d64d4a0fd0c193
+      windows:
+        amd64:   sha256:b92c2670ce8dd75f744537abb6e98df84ce5a18da7df6b70741e92d9e57098bf
+
