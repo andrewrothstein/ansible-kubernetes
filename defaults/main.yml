@@ -2,7 +2,7 @@
 kubernetes_mirror : https://storage.googleapis.com/kubernetes-release/release
 kubernetes_platform : amd64
 
-kubernetes_ver : v1.8.4
+kubernetes_ver : v1.8.5
 
 kubernetes_install_dir : /usr/local/bin
 kubernetes_escalate_privilege: True
@@ -34,6 +34,37 @@ kubernetes_server_dep_pkgs:
   - socat
 
 kubernetes_checksums:
+  v1.8.5: # see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v185
+    client:
+      darwin:
+        '386': sha256:89b57f6eccc02c95c4de4db189092756a9bf85033200a11db56ff30a38e2dda0
+        amd64: sha256:a02bbbfe403db81f7a6317e752d9fe7853b583e34077eebfa05c7f0ec4a89712
+      linux:
+        '386':   sha256:a1c047cdfbcb753a8beabcf6358863c125d46e71c4d3cbe56f06237ce6f2fed6
+        amd64:   sha256:c32b6f90f1e8a15451f0d412d6d1f3db28948d2f7d76d4e28d83c11e1eb25f20
+        arm64:   sha256:a89a5f2889e0aae0caa673a2664c7af40e488a55ae26ab7a55599b0fbd87e281
+        arm:     sha256:5b485bbac15b8621be7ff936a5f02565511b9b00e56a5b67dfa1b273586d5af1
+        ppc64le: sha256:ae4e8fcd230198bc3ad1294d61e04602a6bdd3c836997d48fd3262ab24e2885c
+        s390x:   sha256:c7803f0e3480dfdeedd8afd2d460ab6badf0e8879febafa30a4a3fbc87554507
+      windows:
+        '386': sha256:b78e04b0bc400f3f7a012cef630fd3757c12d54f16b180470d722c4d678867e1
+        amd64: sha256:a0b32d3fcd5e692a452d2a38a6dd34a7f3e40e22e88e4cfba77ae224e07d8565
+    server:
+      linux:
+        amd64:   sha256:523f747f68842000ca88c84e8db07243248f6064295701b2168c64d2b77adfcb
+        arm64:   sha256:3e43fccbe224ae7b20fd462f9c5932e5c5d58f0a3d6f67365a9e0d4e00fa796a
+        arm:     sha256:678c92b8b7b0616d102f9b74c9a11dd2763ba67bfa30075aca964aead2fe5370
+        ppc64le: sha256:55993ca6301988412876b79216442968834847a571b6423235a0c7bffe65a56a
+        s390x:   sha256:32cb7484cdbeb4153fc672373055a4e8a05a61f83c722bef623f3c6922c01faa
+    node:
+      linux:
+        amd64:   sha256:a3ae45d389001788401c07c5b3d14a9f0af842466080a3c31b6a03200b27231b
+        arm64:   sha256:642bd5c1c2728463667b1e0e6a110e2bf732972c16e8900701320a7fe85ead89
+        arm:     sha256:5b654c6fad642739f949be245eae94455fd9f2a25a388ca8effb01c49bd3451e
+        ppc64le: sha256:3eeec484d7ea6caf1a3f8157d2fe504c411f27ee9930d744a017adefae191786
+        s390x:   sha256:5874957a48d103e9dd9c1bdbecced59d13bc3ac59d2dec44de989521f711c842
+      windows:
+        amd64:   sha256:46a57f13bc5a4b78cd58b9914257aff15163cee24f3e43bf6c3a0a87ae3ed030
   v1.8.4: # see https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.8.md#v184
     client:
       darwin:
