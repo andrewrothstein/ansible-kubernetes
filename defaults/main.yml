@@ -9,23 +9,24 @@ kubernetes_escalate_privilege: True
 
 kubernetes_binaries:
   server:
+    - apiextensions-apiserver
+    - cloud-controller-manager
     - hyperkube
     - kubeadm
     - kube-aggregator
     - kube-apiserver
     - kube-controller-manager
-    - kubefed
     - kubelet
     - kube-proxy
     - kube-scheduler
+    - mounter
   client:
     - kubectl
-    - kubefed
   node:
-    - kube-proxy
-    - kubefed
     - kubelet
+    - kubeadm
     - kubectl
+    - kube-proxy
 
 kubernetes_cleanup: False
 
