@@ -438,4 +438,3 @@ kubernetes_checksums:
         s390x:   sha256:30f2254bf442fc36fc23bd962930eb48fd000c9ffce81c26c0d64d4a0fd0c193
       windows:
         amd64:   sha256:b92c2670ce8dd75f744537abb6e98df84ce5a18da7df6b70741e92d9e57098bf
-
