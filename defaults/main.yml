@@ -1,10 +1,10 @@
 ---
-kubernetes_mirror : https://storage.googleapis.com/kubernetes-release/release
-kubernetes_platform : amd64
+kubernetes_mirror: https://storage.googleapis.com/kubernetes-release/release
+kubernetes_platform: amd64
 
-kubernetes_ver : v1.10.8
+kubernetes_ver: v1.10.8
 
-kubernetes_install_dir : /usr/local/bin
+kubernetes_install_dir: /usr/local/bin
 kubernetes_escalate_privilege: True
 
 kubernetes_binaries:
