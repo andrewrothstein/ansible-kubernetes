@@ -10,7 +10,6 @@ kubernetes_escalate_privilege: True
 kubernetes_binaries:
   server:
     - apiextensions-apiserver
-    - hyperkube
     - kubeadm
     - kube-apiserver
     - kube-controller-manager
@@ -539,5 +538,6 @@ kubernetes_checksums:
         ppc64le: sha256:7d4163b7fdb08db5f8d7c6651b9a47ef2ac41c051c051ed31a98f9a93fbe6c77
         # https://dl.k8s.io/v1.17.0/kubernetes-node-linux-s390x.tar.gz
         s390x: sha256:9b4237f008a0d5912ff0624101b88333ea14c750e1eb0feb7fb5a262ed385cdc
+      windows:
         # https://dl.k8s.io/v1.17.0/kubernetes-node-windows-amd64.tar.gz
         amd64: sha256:6348c63afacb108417fc606cd5bd207bfcefbe31cf35a80a9b582d6cbe254f10

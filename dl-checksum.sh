@@ -60,6 +60,7 @@ dl_ver() {
     dl $ver node linux arm64
     dl $ver node linux ppc64le
     dl $ver node linux s390x
+    printf "      %s:\n" windows
     dl $ver node windows amd64
 }
 
