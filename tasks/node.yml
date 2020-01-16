@@ -1,56 +1,56 @@
 ---
 - name: download node binaries
-  become: '{{kubernetes_escalate_privilege}}'
+  become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
   get_url:
-    url: '{{kubernetes_node_tgz_url}}'
-    dest: /tmp/{{kubernetes_node_tgz}}
-    checksum: '{{kubernetes_node_checksum}}'
+    url: '{{ kubernetes_node_tgz_url }}'
+    dest: /tmp/{{ kubernetes_node_tgz }}
+    checksum: '{{ kubernetes_node_checksum }}'
     mode: 0644
 
 - name: extract node binaries
-  become: '{{kubernetes_escalate_privilege}}'
+  become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
   unarchive:
-    src: /tmp/{{kubernetes_node_tgz}}
-    dest: '{{kubernetes_install_path}}'
+    src: /tmp/{{ kubernetes_node_tgz }}
+    dest: '{{ kubernetes_install_path }}'
     remote_src: yes
-    creates: '{{kubernetes_install_path}}/kubernetes/node/bin'
+    creates: '{{ kubernetes_install_path }}/kubernetes/node/bin'
 
 - name: make binary directory world readable
-  become: '{{kubernetes_escalate_privilege}}'
+  become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
   with_items:
-    - '{{kubernetes_install_path}}/kubernetes'
-    - '{{kubernetes_install_path}}/kubernetes/node'
-    - '{{kubernetes_install_path}}/kubernetes/node/bin'
+    - '{{ kubernetes_install_path }}/kubernetes'
+    - '{{ kubernetes_install_path }}/kubernetes/node'
+    - '{{ kubernetes_install_path }}/kubernetes/node/bin'
   file:
-    path: '{{item}}'
+    path: '{{ item }}'
     state: directory
     mode: 0755
 
 - name: make binaries world executable
-  become: '{{kubernetes_escalate_privilege}}'
+  become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
-  with_items: '{{kubernetes_binaries.node}}'
+  with_items: '{{ kubernetes_binaries.node }}'
   file:
-    path: '{{kubernetes_install_path}}/kubernetes/node/bin/{{item}}'
+    path: '{{ kubernetes_install_path }}/kubernetes/node/bin/{{ item }}'
     state: file
     mode: 0755
 
 - name: link node binaries
-  become: '{{kubernetes_escalate_privilege}}'
+  become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
-  with_items: '{{kubernetes_binaries.node}}'
+  with_items: '{{ kubernetes_binaries.node }}'
   file:
-    src: '{{kubernetes_install_path}}/kubernetes/node/bin/{{item}}'
-    dest: '{{kubernetes_install_dir}}/{{item}}'
+    src: '{{ kubernetes_install_path }}/kubernetes/node/bin/{{ item }}'
+    dest: '{{ kubernetes_install_dir }}/{{ item }}'
     state: link
 
 - name: cleaning up...
-  become: '{{kubernetes_escalate_privilege}}'
+  become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
   when: kubernetes_cleanup
   file:
-    path: /tmp/{{kubernetes_node_tgz}}
+    path: /tmp/{{ kubernetes_node_tgz }}
     state: absent
