@@ -1,6 +1,6 @@
 dependencies:
 - role: andrewrothstein.unarchive-deps
-  version: v1.1.5
+  version: v1.2.0
 galaxy_info:
   author: Fouad Semaan
   description: Installs kubernetes binaries to /usr/local/bin
@@ -16,20 +16,21 @@ galaxy_info:
   - name: Archlinux
     versions:
     - all
+  - name: Debian
+    versions:
+    - bullseye
+    - buster
   - name: EL
     versions:
-    - 7
     - 8
   - name: Fedora
     versions:
-    - 31
-    - 32
-  - name: Gentoo
-    versions:
-    - all
+    - 34
+    - 35
   - name: MacOSX
     versions:
     - all
   - name: Ubuntu
     versions:
-    - all
+    - bionic
+    - focal
