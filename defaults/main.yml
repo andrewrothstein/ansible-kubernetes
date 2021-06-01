@@ -2,7 +2,7 @@
 kubernetes_mirror: https://storage.googleapis.com/kubernetes-release/release
 kubernetes_platform: amd64
 
-kubernetes_ver: v1.18.8
+kubernetes_ver: v1.21.1
 
 kubernetes_install_dir: /usr/local/bin
 kubernetes_escalate_privilege: True
@@ -699,4 +699,57 @@ kubernetes_checksums:
         s390x: sha256:52a89ce3c7b674f96524d3884947a5154efe99b7fcaafc6a76d83899bc28f2d4
       windows:
         # https://dl.k8s.io/v1.18.8/kubernetes-node-windows-amd64.tar.gz
+        amd64: sha256:2b3b1ea415320bb920dc881500e1625e9d7f433286d06019a3c166fe3c3ccb69
+  # https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.21.md
+  v1.21.1:
+    client:
+      darwin:
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-darwin-386.tar.gz
+        386: sha256:df3948bd621394be6e9a10c55b1bbc1cb6b3575dfaf2cffcb195cdbe91f2addf
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-darwin-amd64.tar.gz
+        amd64: sha256:61eba814fcaff89a4ca79132196c7355c39e927f7e2c67c9c8027da9e980998b
+      linux:
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-linux-386.tar.gz
+        386: sha256:0ff64c5f3352753d71224cb0e03c02caa154965e2753dca8b00c6162e13b8bd0
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-linux-amd64.tar.gz
+        amd64: sha256:1cedd0038156aad374ae8dec1a06db8e374def3ae07194e277e3f16f6c65f025
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-linux-arm.tar.gz
+        arm: sha256:b5c15436b17d0f4e489e995faa7b30420eaca653bdd6852c6df1eb8f087fa4d0
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-linux-arm64.tar.gz
+        arm64: sha256:ee56142d05229d8bf108d6acf681affb74d077183e9bacbd9bacc28421779ab9
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-linux-ppc64le.tar.gz
+        ppc64le: sha256:5e3a988a426ad7d9023be9c37e69053a1f70e50d44ad4a7c8b98318ecd255703
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-linux-s390x.tar.gz
+        s390x: sha256:e3c5e5743694d01cf958fce36aa99f424cb45ff4bdd429c62143d6013b02455c
+      windows:
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-windows-386.tar.gz
+        386: sha256:8031ff14ddd46d69c42be0eaab8f37cd4701505602a6b512876e436fa4926d1c
+        # https://dl.k8s.io/v1.21.1/kubernetes-client-windows-amd64.tar.gz
+        amd64: sha256:b6cff716ebccabe5bbeaf0be3fa0509ab54706b25a8b3bf60285cbc6d2bf56ee
+    server:
+      linux:
+        # https://dl.k8s.io/v1.21.1/kubernetes-server-linux-amd64.tar.gz
+        amd64: sha256:56d1ffc9090b579bd35ad24225a076c9d3ed6329ca00af405eb780f414ef47c3
+        # https://dl.k8s.io/v1.21.1/kubernetes-server-linux-arm.tar.gz
+        arm: sha256:210f3f3ea4a110be8f3eab554d71f9e4d52304f28148140a36ed8fcccf9dbea5
+        # https://dl.k8s.io/v1.21.1/kubernetes-server-linux-arm64.tar.gz
+        arm64: sha256:3c04f5284705cac00b322677626021815c0438d9730263b86cc02c8bccf203de
+        # https://dl.k8s.io/v1.21.1/kubernetes-server-linux-ppc64le.tar.gz
+        ppc64le: sha256:0d7d6c56c23888d5231f9123df95b8da520906b19125892339abe96127ba260b
+        # https://dl.k8s.io/v1.21.1/kubernetes-server-linux-s390x.tar.gz
+        s390x: sha256:0e67dce349d5c24904aaf4981899553d8d7fd1723a8287272689f7f6af035abf
+    node:
+      linux:
+        # https://dl.k8s.io/v1.21.1/kubernetes-node-linux-amd64.tar.gz
+        amd64: sha256:8d0fe919b8e7656358413a1504e756b7d0e3764f6a9bce4038884c12104720ba
+        # https://dl.k8s.io/v1.21.1/kubernetes-node-linux-arm.tar.gz
+        arm: sha256:5029e5d555ae110fd7e30a9f3097c692987355927725a2222f5b44375126baa5
+        # https://dl.k8s.io/v1.21.1/kubernetes-node-linux-arm64.tar.gz
+        arm64: sha256:15047fd63aa53c2780efe94e1b809d5da0cffb6260f38e62729fe50811fbe0ab
+        # https://dl.k8s.io/v1.21.1/kubernetes-node-linux-ppc64le.tar.gz
+        ppc64le: sha256:51c393daac16c7637cfd0f4b5a8f68f151ef24e4d1425adc5e67201108a22c33
+        # https://dl.k8s.io/v1.21.1/kubernetes-node-linux-s390x.tar.gz
+        s390x: sha256:52a89ce3c7b674f96524d3884947a5154efe99b7fcaafc6a76d83899bc28f2d4
+      windows:
+        # https://dl.k8s.io/v1.21.1/kubernetes-node-windows-amd64.tar.gz
         amd64: sha256:2b3b1ea415320bb920dc881500e1625e9d7f433286d06019a3c166fe3c3ccb69
