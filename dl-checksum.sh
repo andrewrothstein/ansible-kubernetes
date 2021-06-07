@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+set -e
 DIR=~/Downloads
 MIRROR=https://dl.k8s.io
 
@@ -9,8 +10,9 @@ dl()
     local os=$3
     local arch=$4
 
-    local rfile=$MIRROR/$ver/kubernetes-$k8sdistro-$os-$arch.tar.gz
-    local lfile=$DIR/kubernetes-$VER-$k8sdistro-$os-$arch.tar.gz
+    local -r suffix="${k8sdistro}-${os}-${arch}.tar.gz"
+    local -r rfile="${MIRROR}/${ver}/kubernetes-${suffix}"
+    local -r lfile="$DIR/kubernetes-${ver}-${suffix}"
     if [ ! -e $lfile ]; then
         wget -q -O $lfile $rfile
     fi
@@ -30,8 +32,8 @@ dl_ver() {
     printf "    %s:\n" client
 
     printf "      %s:\n" darwin
-    dl $ver client darwin 386
     dl $ver client darwin amd64
+    dl $ver client darwin arm64
 
     printf "      %s:\n" linux
     dl $ver client linux 386
