@@ -1,6 +1,6 @@
 andrewrothstein.kubernetes
 ==========================
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-kubernetes.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-kubernetes)
+![Build Status](https://github.com/andrewrothstein/ansible-kubernetes/actions/workflows/build.yml/badge.svg)
 
 Installs [Kubernetes](http://kubernetes.io/docs/getting-started-guides/binary_release/#prebuilt-binary-release)  binaries to /usr/local/bin.
 
