@@ -1,23 +1,23 @@
 ---
-- name: resolving vars for {{ kubernetes_persona }}
+- name: resolving {{ kubernetes_persona }} vars
   include_vars:
     file: install-persona-vars.yml
 
-- name: install OS pkg runtime dependencies
+- name: installing {{ kubernetes_persona }} OS pkg runtime dependencies
   become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
   package:
     name: '{{ kubernetes_persona_os_dep_pkgs }}'
     state: present
 
-- name: checking for install in {{ kubernetes_persona_bin_dir }}
+- name: checking for {{ kubernetes_persona }} installation at {{ kubernetes_persona_bin_dir }}
   stat:
     path: '{{ kubernetes_persona_bin_dir }}'
   changed_when: false
   register: kubernetes_persona_binary
 - when: not kubernetes_persona_binary.stat.exists
   block:
-    - name: downloading {{ kubernetes_persona }} binaries
+    - name: downloading {{ kubernetes_persona }} binaries from {{ kubernetes_tgz_url }}
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
       get_url:
@@ -26,7 +26,7 @@
         checksum: '{{ kubernetes_checksum }}'
         mode: 0644
 
-    - name: extracting {{ kubernetes_persona }} binaries
+    - name: extracting {{ kubernetes_persona }} binaries to {{ kubernetes_install_path }}
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
       unarchive:
@@ -35,7 +35,7 @@
         dest: '{{ kubernetes_install_path }}'
         creates: '{{ kubernetes_persona_bin_dir }}'
 
-    - name: make binary directories world readable
+    - name: making {{ kubernetes_persona }} binary directories world readable
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
       with_items: '{{ kubernetes_persona_dirs }}'
@@ -44,7 +44,7 @@
         state: directory
         mode: 0755
 
-    - name: make binaries world executable
+    - name: making {{ kubernetes_persona }} binaries in {{ kubernetes_persona_bin_dir }} world executable
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
       with_items: '{{ kubernetes_persona_binaries }}'
@@ -53,14 +53,14 @@
         state: file
         mode: 0755
   always:
-    - name: rm
+    - name: rm {{ kubernetes_tmp_tgz }}
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
       file:
         path: '{{ kubernetes_tmp_tgz }}'
         state: absent
 
-- name: linking binaries in {{ kubernetes_persona_bin_dir }} from {{ kubernetes_install_dir }}
+- name: linking {{ kubernetes_persona }} binaries in {{ kubernetes_persona_bin_dir }} from {{ kubernetes_install_dir }}
   become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
   with_items: '{{ kubernetes_persona_binaries }}'

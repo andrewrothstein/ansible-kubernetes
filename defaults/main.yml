@@ -5,7 +5,7 @@ kubernetes_platform: amd64
 kubernetes_ver: v1.22.1
 
 kubernetes_install_dir: /usr/local/bin
-kubernetes_escalate_privilege: True
+kubernetes_escalate_privilege: true
 
 # the personas to install. see test.yml for usage
 #kubernetes_personas:
@@ -30,8 +30,6 @@ kubernetes_binaries:
     - kubeadm
     - kubectl
     - kube-proxy
-
-kubernetes_cleanup: False
 
 kubernetes_checksums:
   # https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.16.md
