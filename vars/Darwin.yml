@@ -1,3 +1,2 @@
 ---
-kubernetes_install_server: False
 kubernetes_escalate_privilege: False

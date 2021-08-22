@@ -31,11 +31,6 @@ kubernetes_binaries:
     - kubectl
     - kube-proxy
 
-kubernetes_os_dep_pkgs:
-  server:
-    - conntrack
-    - socat
-
 kubernetes_cleanup: False
 
 kubernetes_checksums:
