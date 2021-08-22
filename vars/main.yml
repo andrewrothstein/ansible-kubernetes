@@ -1,21 +1,18 @@
 ---
-kubernetes_os: '{{ansible_system|lower}}'
+kubernetes_os: '{{ ansible_system|lower }}'
 
-kubernetes_url: '{{kubernetes_mirror}}/{{kubernetes_ver}}'
+kubernetes_url: '{{ kubernetes_mirror }}/{{ kubernetes_ver }}'
 
-kubernetes_server_tgz: 'kubernetes-{{kubernetes_ver}}-server-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
-kubernetes_server_upstream_tgz: 'kubernetes-server-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
-kubernetes_server_tgz_url: '{{kubernetes_url}}/{{kubernetes_server_upstream_tgz}}'
-kubernetes_server_checksum: '{{kubernetes_checksums[kubernetes_ver]["server"][kubernetes_os][kubernetes_platform]}}'
+kubernetes_install_path: '{{ kubernetes_install_dir }}/k8s-{{ kubernetes_ver }}'
 
-kubernetes_client_tgz: 'kubernetes-{{kubernetes_ver}}-client-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
-kubernetes_client_upstream_tgz: 'kubernetes-client-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
-kubernetes_client_tgz_url: '{{kubernetes_url}}/{{kubernetes_client_upstream_tgz}}'
-kubernetes_client_checksum: '{{kubernetes_checksums[kubernetes_ver]["client"][kubernetes_os][kubernetes_platform]}}'
+kubernetes_client_tgz: kubernetes-{{ kubernetes_ver }}-client-{{ kubernetes_os }}-{{ kubernetes_platform }}.tar.gz
+kubernetes_client_upstream_tgz: kubernetes-client-{{ kubernetes_os }}-{{ kubernetes_platform }}.tar.gz
+kubernetes_client_tgz_url: '{{ kubernetes_url }}/{{ kubernetes_client_upstream_tgz }}'
+kubernetes_client_checksum: '{{ kubernetes_checksums[kubernetes_ver]["client"][kubernetes_os][kubernetes_platform] }}'
 
-kubernetes_node_tgz: 'kubernetes-{{kubernetes_ver}}-node-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
-kubernetes_node_upstream_tgz: 'kubernetes-node-{{kubernetes_os}}-{{kubernetes_platform}}.tar.gz'
-kubernetes_node_tgz_url: '{{kubernetes_url}}/{{kubernetes_node_upstream_tgz}}'
-kubernetes_node_checksum: '{{kubernetes_checksums[kubernetes_ver]["node"][kubernetes_os][kubernetes_platform]}}'
+kubernetes_node_tgz: kubernetes-{{ kubernetes_ver }}-node-{{ kubernetes_os }}-{{ kubernetes_platform }}.tar.gz
+kubernetes_node_upstream_tgz: kubernetes-node-{{ kubernetes_os }}-{{ kubernetes_platform }}.tar.gz
+kubernetes_node_tgz_url: '{{ kubernetes_url }}/{{ kubernetes_node_upstream_tgz }}'
+kubernetes_node_checksum: '{{ kubernetes_checksums[kubernetes_ver]["node"][kubernetes_os][kubernetes_platform] }}'
 
-kubernetes_install_path: '{{kubernetes_install_dir}}/k8s-{{kubernetes_ver}}'
+

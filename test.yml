@@ -1,7 +1,10 @@
 ---
 - hosts: all
+  vars:
+    kubernetes_personas:
+      - server
+      - client
+      - node
   roles:
-    - role: '{{playbook_dir}}'
-      kubernetes_install_server: True
-      kubernetes_install_client: True
-      kubernetes_install_node: True
+    - role: '{{ playbook_dir }}'
+ 

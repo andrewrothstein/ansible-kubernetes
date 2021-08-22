@@ -20,11 +20,7 @@
     state: directory
     mode: 0755
 
-- include_tasks: server.yml
-  when: kubernetes_install_server | default(False)
-
-- include_tasks: client.yml
-  when: kubernetes_install_client | default(False)
-
-- include_tasks: node.yml
-  when: kubernetes_install_node | default(False)
+- loop: '{{ kubernetes_personas | default([]) }}'
+  loop_control:
+    loop_var: kubernetes_persona
+  include_tasks: install-persona.yml
