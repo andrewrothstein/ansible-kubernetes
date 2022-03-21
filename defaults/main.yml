@@ -2,7 +2,7 @@
 kubernetes_mirror: https://storage.googleapis.com/kubernetes-release/release
 kubernetes_platform: amd64
 
-kubernetes_ver: v1.23.1
+kubernetes_ver: v1.23.5
 
 kubernetes_install_dir: /usr/local/bin
 kubernetes_escalate_privilege: true
@@ -1177,3 +1177,215 @@ kubernetes_checksums:
       windows:
         # https://dl.k8s.io/v1.23.1/kubernetes-node-windows-amd64.tar.gz
         amd64: sha256:aec9dfbd64670bc1175577aa2538e8eefc770c85e6e8cc2ea6719c524a02adff
+  # https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.23.md
+  v1.23.2:
+    client:
+      darwin:
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-darwin-amd64.tar.gz
+        amd64: sha256:ce1acb3e1c85ae76ef405043cc0769ad4c2635788f727eed91dc4e254812f198
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-darwin-arm64.tar.gz
+        arm64: sha256:f23650e7d2f94e07053c5db36b61ff0ce2f0d8a60a12c2f3358437abc1906e47
+      linux:
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-linux-386.tar.gz
+        386: sha256:d0d50014417d0f741f309bfd6639d3937968fb861be6b03ecefbde7b3a30fe8f
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-linux-amd64.tar.gz
+        amd64: sha256:bd9bdafdb69e7ff7438492a3feb2568953616b05f539f9dbc587ad5523fe6b82
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-linux-arm.tar.gz
+        arm: sha256:0629ebd8d22dd6759a31d504c4d96dd9f03959f0fec1d92b0d09e147f38ada78
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-linux-arm64.tar.gz
+        arm64: sha256:d0d2a4bc9336a5842f213af69df8815720054af6f459a89aa3a49adc04f3bdba
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-linux-ppc64le.tar.gz
+        ppc64le: sha256:79fb0d2cba1b576737e610d47b6ff547815cca9a610118edbc7314d273dbede4
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-linux-s390x.tar.gz
+        s390x: sha256:f4d4d580eb540049a5a9d6967383cf2c5576e5f59383810efe4a057c2a005818
+      windows:
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-windows-386.tar.gz
+        386: sha256:0517e68918e575027347505d25d02bd18d9a514920326ac6f7aba27687ed5953
+        # https://dl.k8s.io/v1.23.2/kubernetes-client-windows-amd64.tar.gz
+        amd64: sha256:acdc8c9dc2fd15e68f994206a8c45b18544450aee0ac4aeb43434ee3ecd154f7
+    server:
+      linux:
+        # https://dl.k8s.io/v1.23.2/kubernetes-server-linux-amd64.tar.gz
+        amd64: sha256:46e8f16dce3be7970224b9be0ab80fd9d0f8cdc9e206fab91d113b552b475795
+        # https://dl.k8s.io/v1.23.2/kubernetes-server-linux-arm.tar.gz
+        arm: sha256:339289c5dd2010c705289d4a1af50b3c986977562737aa40cb302d9de53abc4a
+        # https://dl.k8s.io/v1.23.2/kubernetes-server-linux-arm64.tar.gz
+        arm64: sha256:f42de8dc98e8b10626be4b6095a19214a5db1984d821643959cdda848c5797f0
+        # https://dl.k8s.io/v1.23.2/kubernetes-server-linux-ppc64le.tar.gz
+        ppc64le: sha256:3b50fb7893492896b20e345403cb2218a216877f0c0a1197e5156a79290bd1b1
+        # https://dl.k8s.io/v1.23.2/kubernetes-server-linux-s390x.tar.gz
+        s390x: sha256:d931cb2dc735a3fde9986e7e120d0f92ae4f4334ecbb003496bc755a6e178911
+    node:
+      linux:
+        # https://dl.k8s.io/v1.23.2/kubernetes-node-linux-amd64.tar.gz
+        amd64: sha256:c5c6b15f36fafde081831e14542c91da26ea6e7ef1bd674db3388ff2b46c243a
+        # https://dl.k8s.io/v1.23.2/kubernetes-node-linux-arm.tar.gz
+        arm: sha256:4cc187a0f442e0fa531e05913024688cd1e76e375a24e0a23818f004ee44e556
+        # https://dl.k8s.io/v1.23.2/kubernetes-node-linux-arm64.tar.gz
+        arm64: sha256:5aa69e42a342701e7c1d0a0f0bf19324cd40b6bbbc9268c9e54acce650661287
+        # https://dl.k8s.io/v1.23.2/kubernetes-node-linux-ppc64le.tar.gz
+        ppc64le: sha256:8b0d28622db8516c3918dc10dba0dd381c34fa10d33ff8b82f10b51fa3309083
+        # https://dl.k8s.io/v1.23.2/kubernetes-node-linux-s390x.tar.gz
+        s390x: sha256:25bfee9cc808bd726ca7deef0938200029fff0a9d77c08adcc9e4c441982a9af
+      windows:
+        # https://dl.k8s.io/v1.23.2/kubernetes-node-windows-amd64.tar.gz
+        amd64: sha256:7de83560f0822c94e87bec3a4b969aa2cb096b54bb664e29022d286b537bba4d
+  # https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.23.md
+  v1.23.3:
+    client:
+      darwin:
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-darwin-amd64.tar.gz
+        amd64: sha256:64ee4c00c4c5de922ca13211c286b9b3216a6c134f456b178cce9fe2820130f9
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-darwin-arm64.tar.gz
+        arm64: sha256:67099d17689e1c818bedd8fcf4e301a28e28bb77b995ee1c92b4b6dfb53eb911
+      linux:
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-linux-386.tar.gz
+        386: sha256:e14d73c5bf8f13478343eaa88eb02e18f71db4b3952ec59822345ed5f77242d3
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-linux-amd64.tar.gz
+        amd64: sha256:2c241f0d9ef329ff68fd5a1c36e75fe1aac85db31f95a59dca32bac79cad9a83
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-linux-arm.tar.gz
+        arm: sha256:fd71b54d9bce3c80d45e7e2c788882593b50c86a486d0df0c0ce33cab1ecad8d
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-linux-arm64.tar.gz
+        arm64: sha256:9220451110034838bb1f79aba8560187754feece11712492905de0d4d489071f
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-linux-ppc64le.tar.gz
+        ppc64le: sha256:6df3adcbf084facd64ecd14a9db027e661f0d34ac8fbc6904babdfb529158889
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-linux-s390x.tar.gz
+        s390x: sha256:8cc8d27f2846618946c7b1a535d54cb8ff7c1fb8aaa86fefc16217913bfb172d
+      windows:
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-windows-386.tar.gz
+        386: sha256:a220ba755f59497d815e6ddb28de16b54c12e3dae6fac1458869d23dc99275a3
+        # https://dl.k8s.io/v1.23.3/kubernetes-client-windows-amd64.tar.gz
+        amd64: sha256:533411d6c040116c9bcffb5266008a6807a51fb6551453f896adbf9511e0de64
+    server:
+      linux:
+        # https://dl.k8s.io/v1.23.3/kubernetes-server-linux-amd64.tar.gz
+        amd64: sha256:8b2e0f4131febe2fa3102c6b26e760ab113a0725ac4408a6dce8d8c464d3dd8a
+        # https://dl.k8s.io/v1.23.3/kubernetes-server-linux-arm.tar.gz
+        arm: sha256:0945387bff6d1775ad81c96e6eb28e33a84884fc8b8bf33b65a6669c438d494b
+        # https://dl.k8s.io/v1.23.3/kubernetes-server-linux-arm64.tar.gz
+        arm64: sha256:2b31d0cdb105f1ee3fb1e858234d36119586b252c9ba5001cc7ecf633ac8487c
+        # https://dl.k8s.io/v1.23.3/kubernetes-server-linux-ppc64le.tar.gz
+        ppc64le: sha256:053a4e9d703a0c3421c1d70c23f815eaaa3cfe94357e1520ee95e6240237aabf
+        # https://dl.k8s.io/v1.23.3/kubernetes-server-linux-s390x.tar.gz
+        s390x: sha256:70f5ffdcef95aba254e7aa78326e89c71efc5fdf0e281dbffd72b7bd0e1109d9
+    node:
+      linux:
+        # https://dl.k8s.io/v1.23.3/kubernetes-node-linux-amd64.tar.gz
+        amd64: sha256:f82d1cc8f4fef3c59db64602b7301fa2669b9a604878633152d476224dac5a70
+        # https://dl.k8s.io/v1.23.3/kubernetes-node-linux-arm.tar.gz
+        arm: sha256:fa6e7ffe3422c5572d79a623bfb5d3f9eb513d9088314f82383c8f2e7980a175
+        # https://dl.k8s.io/v1.23.3/kubernetes-node-linux-arm64.tar.gz
+        arm64: sha256:3966a7980739de69b70b47746588375db22026e29d6e9dc781ea94bacccbe8a7
+        # https://dl.k8s.io/v1.23.3/kubernetes-node-linux-ppc64le.tar.gz
+        ppc64le: sha256:993bcc83cdfc986ae5bc72266ef48827be18ed9283bb1e48912046bbdc2b8356
+        # https://dl.k8s.io/v1.23.3/kubernetes-node-linux-s390x.tar.gz
+        s390x: sha256:8fc7643966f9eba92eb05b5e277658c9c4af4246b5f7a84d3ea38b4c717b98d3
+      windows:
+        # https://dl.k8s.io/v1.23.3/kubernetes-node-windows-amd64.tar.gz
+        amd64: sha256:4c6f2278b31b92d69e4cf3e2b504b6af88985ddb0181a51f0dea8bcb956c0b66
+  # https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.23.md
+  v1.23.4:
+    client:
+      darwin:
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-darwin-amd64.tar.gz
+        amd64: sha256:9b2cc45a1fdc5d634e6bfffe9d80ecd5d0badf70cec07cb0860fe4f7619c6e3a
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-darwin-arm64.tar.gz
+        arm64: sha256:192bc95cece2698fb011d55e834b1c1299f5c1ca15c8d1ba9285121a679b19d6
+      linux:
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-linux-386.tar.gz
+        386: sha256:39177294408d9ed0d51a784444df8fbe66f1c7c6c9a0265aaf932c24b2e52bfa
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-linux-amd64.tar.gz
+        amd64: sha256:23d635e507e66484b442fe242cc281a251b7f15f4a5520bfbd357a8d749ad22a
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-linux-arm.tar.gz
+        arm: sha256:dfece6de7cc4c3a9322a359404d984b2dc3224efa233c47c7162bbc1a7aa5c87
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-linux-arm64.tar.gz
+        arm64: sha256:426b713d1c1070bbd1a0edfa6d6bca96d09ab7486c4b95acbd73696e622d2ac2
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-linux-ppc64le.tar.gz
+        ppc64le: sha256:3631b60603d7757483a6ea50fe4ed6576472a6c999b7c147e40b7558b25951bc
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-linux-s390x.tar.gz
+        s390x: sha256:dafcbe18b1ea1e2980035dd5df54d513ff3ff6fd2fa19a085a94d1c0f00bdda5
+      windows:
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-windows-386.tar.gz
+        386: sha256:af32b7f12b4d17ed114e788883231ff54e8432b2f273d9bc1b1db90ac94659bf
+        # https://dl.k8s.io/v1.23.4/kubernetes-client-windows-amd64.tar.gz
+        amd64: sha256:a2e8c40f4d3685b306dfc94f2c72898a629d3434083fdd21976a936d93dd0e38
+    server:
+      linux:
+        # https://dl.k8s.io/v1.23.4/kubernetes-server-linux-amd64.tar.gz
+        amd64: sha256:795023538320bb9938dca5c59d7923e67c0ff26e784f3fd66750f6e375acdacc
+        # https://dl.k8s.io/v1.23.4/kubernetes-server-linux-arm.tar.gz
+        arm: sha256:e8d433e425021bb80e7105c6fc5e7308877b0570ee3895dfb25ecedaeeb13565
+        # https://dl.k8s.io/v1.23.4/kubernetes-server-linux-arm64.tar.gz
+        arm64: sha256:1c95055e3abecefb32297e01b5f4546bb67cbab34d214a3145d243e45738ab63
+        # https://dl.k8s.io/v1.23.4/kubernetes-server-linux-ppc64le.tar.gz
+        ppc64le: sha256:f10922193cd8a02d9181cd3cdb7c480b1fec97c5c9b40c27e3e595c48fd4adc0
+        # https://dl.k8s.io/v1.23.4/kubernetes-server-linux-s390x.tar.gz
+        s390x: sha256:7dcdc5ae7a8d3841513aca1dc79c221f9352da2b76417c33fe1c2beb42a7ca35
+    node:
+      linux:
+        # https://dl.k8s.io/v1.23.4/kubernetes-node-linux-amd64.tar.gz
+        amd64: sha256:04a6c7ebfeaf48c5680f7b3c4bab9908c0ada90f2904915931effd923f4d0813
+        # https://dl.k8s.io/v1.23.4/kubernetes-node-linux-arm.tar.gz
+        arm: sha256:e37ea6565647df98ddfce6e4671e51c33809620c3667bc161461ee0440f1a246
+        # https://dl.k8s.io/v1.23.4/kubernetes-node-linux-arm64.tar.gz
+        arm64: sha256:a26353e540c8999bff95bc12df8aec6d296e87176624cc0717f5a853908b6f52
+        # https://dl.k8s.io/v1.23.4/kubernetes-node-linux-ppc64le.tar.gz
+        ppc64le: sha256:49306c7d7c5121367aec6f5cd1866649ae254ba2c46357b8b03f8fce0026b515
+        # https://dl.k8s.io/v1.23.4/kubernetes-node-linux-s390x.tar.gz
+        s390x: sha256:20806af5108ae2d5d69e1375b0a1f6cd247f8c43fed2502871c89954f247d40a
+      windows:
+        # https://dl.k8s.io/v1.23.4/kubernetes-node-windows-amd64.tar.gz
+        amd64: sha256:bbe86da619b2955916ae24765f12dfcdfc616623fe8e21ec01d238d404d61a96
+  # https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.23.md
+  v1.23.5:
+    client:
+      darwin:
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-darwin-amd64.tar.gz
+        amd64: sha256:6c0102325729b8a5537d47fd03d4030309bb78bd568bbca3171a5033f4f30913
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-darwin-arm64.tar.gz
+        arm64: sha256:3344bce8a3673f4dbca2d39f8cc9c8efd025c28bd3b47895af913e6bb5083ae8
+      linux:
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-linux-386.tar.gz
+        386: sha256:489517553477f5909c4d19c2959ee6fa7289f89fdf1884209c4076e346f49b29
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-linux-amd64.tar.gz
+        amd64: sha256:3bc2b4e26b20f2833fbad4ba6b8635b9f2eea760eebb5c90d0b2f64c8c62da7c
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-linux-arm.tar.gz
+        arm: sha256:671906fe83b1f3f4637a33d371dca4d31aebb1dffc4aac30d55916054564f47e
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-linux-arm64.tar.gz
+        arm64: sha256:f5b5e5a94c0d6c0b5c4f5bb109d032f28088253f5c78f3d66ae4afcb59f41f8c
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-linux-ppc64le.tar.gz
+        ppc64le: sha256:085f54f4530da0f9768e1fa9611a4ce530fab041b7eccbf968d11a996e6649b4
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-linux-s390x.tar.gz
+        s390x: sha256:14699e17da7f8dfe1593567a5c81f591ef37d3c87e873015bdd1c9d7c1b51578
+      windows:
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-windows-386.tar.gz
+        386: sha256:317c0ce0be9cfe396fa2fac3e0f9ca3e0ddc329c9817cb7b459a6bd80376f7e0
+        # https://dl.k8s.io/v1.23.5/kubernetes-client-windows-amd64.tar.gz
+        amd64: sha256:20d476fd4eb67cf9e9d55511f339004a7023a58ae9cbf7a31d2617f6e6bf6819
+    server:
+      linux:
+        # https://dl.k8s.io/v1.23.5/kubernetes-server-linux-amd64.tar.gz
+        amd64: sha256:f27cb89c45a9dcf93569c12d61441cea73d6430e54642caa762bc82776e582d3
+        # https://dl.k8s.io/v1.23.5/kubernetes-server-linux-arm.tar.gz
+        arm: sha256:f781e0a5add3e699e4bd0518981257bf0befd0312377ea9737e142c47960535d
+        # https://dl.k8s.io/v1.23.5/kubernetes-server-linux-arm64.tar.gz
+        arm64: sha256:1c8910495a316c1300c40ae3054e5ba68cac79d61e80f4276a4312f95ced38e0
+        # https://dl.k8s.io/v1.23.5/kubernetes-server-linux-ppc64le.tar.gz
+        ppc64le: sha256:a7a599b84ac5bce041cb8c1324f5978634c867a99c1f10d1add08c5206838f08
+        # https://dl.k8s.io/v1.23.5/kubernetes-server-linux-s390x.tar.gz
+        s390x: sha256:8f2fa68a705f7e807966e5bac0ca92143da8ffe88993f050976f14bea259e459
+    node:
+      linux:
+        # https://dl.k8s.io/v1.23.5/kubernetes-node-linux-amd64.tar.gz
+        amd64: sha256:a40cdc27bfbf91af15e9606a6715abd8533ebd51cb6d1485d0d9b769e750051c
+        # https://dl.k8s.io/v1.23.5/kubernetes-node-linux-arm.tar.gz
+        arm: sha256:a7ee3742916296c540f440a34db82feec8ca7b914c0be3667f8c737ff097962b
+        # https://dl.k8s.io/v1.23.5/kubernetes-node-linux-arm64.tar.gz
+        arm64: sha256:a9acb0f68fa77c9ccad0299e85d4815500e8935e727126cf1dda4f78ed4bee01
+        # https://dl.k8s.io/v1.23.5/kubernetes-node-linux-ppc64le.tar.gz
+        ppc64le: sha256:851b9f1779b1869a97ca4e58befe396513f407f473ea2ad4ff50ab992ee5723c
+        # https://dl.k8s.io/v1.23.5/kubernetes-node-linux-s390x.tar.gz
+        s390x: sha256:17fb3eb42dc7ebbf049527043a64bb680e32944f2e77436a83490a86b8e632ed
+      windows:
+        # https://dl.k8s.io/v1.23.5/kubernetes-node-windows-amd64.tar.gz
+        amd64: sha256:fa8c5d898769192cbd92274e8cd8779018e8957cb5fa8eca25a009374b4f8616

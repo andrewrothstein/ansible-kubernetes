@@ -14,7 +14,7 @@ dl()
     local -r rfile="${MIRROR}/${ver}/kubernetes-${suffix}"
     local -r lfile="$DIR/kubernetes-${ver}-${suffix}"
     if [ ! -e $lfile ]; then
-        wget -q -O $lfile $rfile
+        curl -sSLf -o $lfile $rfile
     fi
 
     printf "        # %s\n" $rfile
@@ -66,4 +66,4 @@ dl_ver() {
     dl $ver node windows amd64
 }
 
-dl_ver 1 23 1
+dl_ver 1 23 5
