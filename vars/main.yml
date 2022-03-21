@@ -7,4 +7,3 @@ kubernetes_os_dep_pkgs:
 kubernetes_os: '{{ ansible_system | lower }}'
 kubernetes_url: '{{ kubernetes_mirror }}/{{ kubernetes_ver }}'
 kubernetes_install_path: '{{ kubernetes_install_dir }}/k8s-{{ kubernetes_ver }}'
-

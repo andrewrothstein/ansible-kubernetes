@@ -1,2 +1,2 @@
 ---
-kubernetes_escalate_privilege: False
+kubernetes_escalate_privilege: false
