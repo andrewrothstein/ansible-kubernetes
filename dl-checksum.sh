@@ -46,7 +46,7 @@ dl_ver() {
     printf "      %s:\n" windows
     dl $ver client windows 386
     dl $ver client windows amd64
-    dl $ver client windows arm64
+    #dl $ver client windows arm64
 
     printf "    %s:\n" server
     printf "      %s:\n" linux
@@ -67,4 +67,4 @@ dl_ver() {
     dl $ver node windows amd64
 }
 
-dl_ver 1 24 2
+dl_ver 1 24 3
