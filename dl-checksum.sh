@@ -67,4 +67,4 @@ dl_ver() {
     dl $ver node windows amd64
 }
 
-dl_ver 1 24 3
+dl_ver 1 25 0
