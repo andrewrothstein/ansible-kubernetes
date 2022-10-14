@@ -1,9 +1,9 @@
 ---
-kubernetes_tgz: kubernetes-{{ kubernetes_ver }}-{{ kubernetes_persona }}-{{ kubernetes_os }}-{{ kubernetes_platform }}.tar.gz
+kubernetes_tgz: kubernetes-{{ kubernetes_ver }}-{{ kubernetes_persona }}-{{ kubernetes_os }}-{{ kubernetes_arch }}.tar.gz
 kubernetes_tmp_tgz: /tmp/{{ kubernetes_tgz }}
-kubernetes_upstream_tgz: kubernetes-{{ kubernetes_persona }}-{{ kubernetes_os }}-{{ kubernetes_platform }}.tar.gz
+kubernetes_upstream_tgz: kubernetes-{{ kubernetes_persona }}-{{ kubernetes_os }}-{{ kubernetes_arch }}.tar.gz
 kubernetes_tgz_url: '{{ kubernetes_url }}/{{ kubernetes_upstream_tgz }}'
-kubernetes_checksum: '{{ kubernetes_checksums[kubernetes_ver][kubernetes_persona][kubernetes_os][kubernetes_platform] }}'
+kubernetes_checksum: '{{ kubernetes_checksums[kubernetes_ver][kubernetes_persona][kubernetes_os][kubernetes_arch] }}'
 kubernetes_persona_binaries: '{{ kubernetes_binaries[kubernetes_persona] }}'
 kubernetes_persona_os_dep_pkgs: '{{ kubernetes_os_dep_pkgs[kubernetes_persona] | default([]) }}'
 kubernetes_persona_bin_dir: '{{ kubernetes_install_path }}/kubernetes/{{ kubernetes_persona }}/bin'
