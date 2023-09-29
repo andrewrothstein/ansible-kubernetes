@@ -7,4 +7,3 @@
       - node
   roles:
     - role: '{{ playbook_dir }}'
- 
