@@ -4,8 +4,7 @@ galaxy_info:
   description: Installs kubernetes binaries to /usr/local/bin
   galaxy_tags:
     - kubernetes
-  license:
-    - MIT
+  license: MIT
   min_ansible_version: 2.0
   platforms:
     - name: Alpine
@@ -30,3 +29,4 @@ galaxy_info:
       versions:
         - focal
         - jammy
+  role_name: kubernetes
