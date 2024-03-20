@@ -1,70 +1,71 @@
 ---
-- name: resolving {{ kubernetes_persona }} vars
-  include_vars:
+- name: Resolving {{ kubernetes_persona }} vars
+  ansible.builtin.include_vars:
     file: install-persona-vars.yml
 
-- name: installing {{ kubernetes_persona }} OS pkg runtime dependencies
+- name: Installing {{ kubernetes_persona }} OS pkg runtime dependencies
   become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
-  package:
+  ansible.builtin.package:
     name: '{{ kubernetes_persona_os_dep_pkgs }}'
     state: present
 
-- name: checking for {{ kubernetes_persona }} installation at {{ kubernetes_persona_bin_dir }}
-  stat:
+- name: Checking for {{ kubernetes_persona }} installation at {{ kubernetes_persona_bin_dir }}
+  ansible.builtin.stat:
     path: '{{ kubernetes_persona_bin_dir }}'
   changed_when: false
   register: kubernetes_persona_binary
-- when: not kubernetes_persona_binary.stat.exists
+- name: Downloading and installing kubernetes binaries
+  when: not kubernetes_persona_binary.stat.exists
   block:
-    - name: downloading {{ kubernetes_persona }} binaries from {{ kubernetes_tgz_url }}
+    - name: Downloading {{ kubernetes_persona }} binaries from {{ kubernetes_tgz_url }}
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ kubernetes_tgz_url }}'
         dest: '{{ kubernetes_tmp_tgz }}'
         checksum: '{{ kubernetes_checksum }}'
-        mode: 0644
+        mode: '644'
 
-    - name: extracting {{ kubernetes_persona }} binaries to {{ kubernetes_install_path }}
+    - name: Extracting {{ kubernetes_persona }} binaries to {{ kubernetes_install_path }}
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ kubernetes_tmp_tgz }}'
         dest: '{{ kubernetes_install_path }}'
         creates: '{{ kubernetes_persona_bin_dir }}'
 
-    - name: making {{ kubernetes_persona }} binary directories world readable
+    - name: Making {{ kubernetes_persona }} binary directories world readable
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
       with_items: '{{ kubernetes_persona_dirs }}'
-      file:
+      ansible.builtin.file:
         path: '{{ item }}'
         state: directory
-        mode: 0755
+        mode: '755'
 
-    - name: making {{ kubernetes_persona }} binaries in {{ kubernetes_persona_bin_dir }} world executable
+    - name: Making {{ kubernetes_persona }} binaries in {{ kubernetes_persona_bin_dir }} world executable
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
       with_items: '{{ kubernetes_persona_binaries }}'
-      file:
+      ansible.builtin.file:
         path: '{{ kubernetes_persona_bin_dir }}/{{ item }}'
         state: file
-        mode: 0755
+        mode: '755'
   always:
-    - name: rm {{ kubernetes_tmp_tgz }}
+    - name: Rm {{ kubernetes_tmp_tgz }}
       become: '{{ kubernetes_escalate_privilege }}'
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ kubernetes_tmp_tgz }}'
         state: absent
 
-- name: linking {{ kubernetes_persona }} binaries in {{ kubernetes_persona_bin_dir }} from {{ kubernetes_install_dir }}
+- name: Linking {{ kubernetes_persona }} binaries in {{ kubernetes_persona_bin_dir }} from {{ kubernetes_install_dir }}
   become: '{{ kubernetes_escalate_privilege }}'
   become_user: root
   with_items: '{{ kubernetes_persona_binaries }}'
-  file:
+  ansible.builtin.file:
     src: '{{ kubernetes_persona_bin_dir }}/{{ item }}'
     dest: '{{ kubernetes_install_dir }}/{{ item }}'
     state: link
