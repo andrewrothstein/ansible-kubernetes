@@ -12,10 +12,6 @@
     "OS_VER": "edge"
   },
   {
-    "OS": "archlinux",
-    "OS_VER": "latest"
-  },
-  {
     "OS": "debian",
     "OS_VER": "bookworm"
   },
