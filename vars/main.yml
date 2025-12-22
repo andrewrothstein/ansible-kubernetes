@@ -4,7 +4,7 @@ kubernetes_os_dep_pkgs:
     - conntrack
     - socat
 
-kubernetes_os: '{{ ansible_system | lower }}'
-kubernetes_arch: '{{ kubernetes_arch_map[ansible_architecture] }}'
+kubernetes_os: '{{ ansible_facts["system"] | lower }}'
+kubernetes_arch: '{{ kubernetes_arch_map[ansible_facts["architecture"]] }}'
 kubernetes_url: '{{ kubernetes_mirror }}/{{ kubernetes_ver }}'
 kubernetes_install_path: '{{ kubernetes_install_dir }}/k8s-{{ kubernetes_ver }}'
