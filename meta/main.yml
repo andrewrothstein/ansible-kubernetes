@@ -11,18 +11,23 @@ galaxy_info:
     - name: Alpine
       versions:
         - all
+    - name: ArchLinux
+      versions:
+        - all
     - name: Debian
       versions:
         - bookworm
-        - bullseye
+        - trixie
     - name: EL
       versions:
-        - '8'
+        - '10'
         - '9'
     - name: Fedora
       versions:
-        - '41'
-        - '42'
+        - all
+    - name: Kali
+      versions:
+        - all
     - name: Ubuntu
       versions:
         - jammy
