@@ -1,0 +1,6 @@
+---
+# conntrack-tools is not available in UBI's default repos.
+# Rocky/AlmaLinux/Fedora have their own vars files that include it.
+kubernetes_os_dep_pkgs:
+  server:
+    - socat
